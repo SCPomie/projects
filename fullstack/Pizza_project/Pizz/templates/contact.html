@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <!-- Bootstrap Card -->
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="row g-0">
+                    <!-- Image Section (Left) -->
+                    <div class="col-md-5">
+                        <img src="{% static 'images/contact_us.jpg' %}" class="img-fluid rounded-start h-100" alt="Contact PizzaCraz">
+                    </div>
+                    <!-- Contact Info Section (Right) -->
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h2 class="card-title text-center mb-3">Contact Us</h2>
+                            <p class="card-text">
+                                We'd love to hear from you! Whether you have a question, feedback, or a custom request, our team is here to help.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><strong>Email:</strong> support@pizzacraz.com</li>
+                                <li><strong>Phone:</strong> +353 1 234 5678</li>
+                                <li><strong>Address:</strong> 123 Pizza Street, Food City, Ireland</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- First Card -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-10">
+            <div class="card shadow-lg">
+                <div class="row g-0">
+                    <!-- Text Section (Left) -->
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h2 class="card-title text-center mb-4">About PizzaCraz</h2>
+                            <p class="card-text">
+                                PizzaCraz is committed to delivering delicious, customizable pizzas made from the freshest ingredients. Our journey began with a simple passion: creating exceptional pizzas that bring people together. We offer a wide range of crusts, sauces, cheeses, and toppings to suit every palate.
+                            </p>
+                            <p class="card-text">
+                                Our chefs are dedicated to ensuring every pizza is crafted with care and precision, delivering a satisfying experience with every bite. Whether you crave a classic pepperoni pizza or a gourmet specialty, PizzaCraz has something for everyone.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Image Section (Right) -->
+                    <div class="col-md-6">
+                        <img src="{% static 'images/pizza_about.jpg' %}" class="img-fluid rounded-end h-100" alt="Delicious Pizza">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Card -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-10">
+            <div class="card shadow-lg">
+                <div class="row g-0">
+                    <!-- Image Section (Left) -->
+                    <div class="col-md-6">
+                        <img src="{% static 'images/pizza_about2.jpg' %}" class="img-fluid rounded-start h-100" alt="Pizza Crafting">
+                    </div>
+
+                    <!-- Text Section (Right) -->
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h2 class="card-title text-center mb-4">Our Passion for Pizza</h2>
+                            <p class="card-text">
+                                At PizzaCraz, we believe that pizza is more than just food — it's an experience that brings people together, whether for a family dinner, a celebration, or a casual get-together with friends. Our commitment to quality means sourcing the finest ingredients, crafting each pizza with attention to detail, and ensuring that every bite delivers a burst of flavor.
+                            </p>
+                            <p class="card-text">
+                                As we continue to grow, our mission remains the same: to serve pizzas that not only satisfy your cravings but also create moments of joy and connection. Whether you're a fan of traditional recipes or adventurous combinations, PizzaCraz is here to serve you the best slice of happiness.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

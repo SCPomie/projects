@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Welcome to PizzaCraz{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="text-center mb-4">
+    <h1>Welcome to PizzaCraz!</h1>
+    <p>Explore our delicious pizzas. Place your order easily.</p>
+    <a href="{% url 'login' %}" class="btn btn-primary">Login to Order</a>
+    <a href="{% url 'register' %}" class="btn btn-outline-success">Create an Account</a>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-md-4">
+    <div class="card">
+      <img src="{% static 'images/pepperoni_pizza.png' %}" class="card-img-top" alt="Pepperoni Pizza">
+      <div class="card-body">
+        <h5 class="card-title">Pepperoni Pizza</h5>
+        <p class="card-text">A classic favorite with pepperoni and mozzarella.</p>
+        <a href="{% url 'login' %}" class="btn btn-primary">Order Now</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card">
+      <img src="{% static 'images/veg.png' %}" class="card-img-top" alt="Veggie Pizza">
+      <div class="card-body">
+        <h5 class="card-title">Veggie Pizza</h5>
+        <p class="card-text">Loaded with fresh veggies for a healthy bite.</p>
+        <a href="{% url 'login' %}" class="btn btn-primary">Order Now</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card">
+      <img src="{% static 'images/bbqchicken.png' %}" class="card-img-top" alt="BBQ Chicken Pizza" height="415">
+      <div class="card-body">
+        <h5 class="card-title">BBQ Chicken Pizza</h5>
+        <p class="card-text">Tender chicken with tangy BBQ sauce and cheese.</p>
+        <a href="{% url 'login' %}" class="btn btn-primary">Order Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

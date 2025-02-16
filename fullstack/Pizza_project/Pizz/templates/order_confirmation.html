@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-lg" style="max-width: 600px; width: 100%;">
+        <div class="card-header bg-success text-white text-center">
+            <h3 class="mb-0">Order Confirmation</h3>
+        </div>
+        <div class="card-body">
+            <p class="text-center fs-5 mb-4">Thank you, <strong>{{ order.name }}</strong>! Your order has been placed successfully.</p>
+            
+            <!-- Pizza Details -->
+            <div class="mb-3">
+                <h5 class="mb-2">Pizza Details:</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Pizza:</strong> {{ order.pizza }}</li>
+                    <li class="list-group-item"><strong>Size:</strong> {{ order.pizza.size }}</li>
+                    <li class="list-group-item"><strong>Crust:</strong> {{ order.pizza.crust }}</li>
+                    <li class="list-group-item"><strong>Sauce:</strong> {{ order.pizza.sauce }}</li>
+                    <li class="list-group-item"><strong>Cheese:</strong> {{ order.pizza.cheese }}</li>
+                    <li class="list-group-item"><strong>Toppings:</strong> 
+                        {% with toppings=order.pizza %}
+                                {% if toppings.pepperoni %}Pepperoni, {% endif %}
+                                {% if toppings.chicken %}Chicken, {% endif %}
+                                {% if toppings.ham %}Ham, {% endif %}
+                                {% if toppings.pineapple %}Pineapple, {% endif %}
+                                {% if toppings.peppers %}Peppers, {% endif %}
+                                {% if toppings.mushrooms %}Mushrooms, {% endif %}
+                                {% if toppings.onions %}Onions, {% endif %}
+                            {% endwith %}
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Delivery Details -->
+            <div class="mb-3">
+                <h5 class="mb-2">Delivery Information:</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Name:</strong> {{ order.name }}</li>
+                    <li class="list-group-item"><strong>Address:</strong> {{ order.address }}</li>
+                    <li class="list-group-item"><strong>Expected Delivery Time:</strong> 30-40 minutes</li>
+                </ul>
+            </div>
+
+            <!-- Payment Information -->
+            <div class="mb-4">
+                <h5 class="mb-2">Payment Information:</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Card Number:</strong> **** **** **** {{ order.card_number|slice:"-4:" }}</li>
+                    <li class="list-group-item"><strong>Expiry:</strong> {{ order.card_expiry_month }}/{{ order.card_expiry_year }}</li>
+                </ul>
+            </div>
+
+            <!-- Buttons -->
+            <div class="text-center">
+                <a href="{% url 'home' %}" class="btn btn-primary me-3">Back to Home</a>
+                <a href="{% url 'create_pizza' %}" class="btn btn-success">Create Another Pizza</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

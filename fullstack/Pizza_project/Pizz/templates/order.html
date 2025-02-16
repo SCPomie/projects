@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center mb-3">📦 Enter Your Delivery and Payment Details</h2>
+
+        <p class="text-muted">You ordered: <strong>{{ pizza }}</strong></p>
+
+        <form method="POST" class="needs-validation" novalidate>
+            {% csrf_token %}
+
+            <!-- Name Field -->
+            <div class="mb-3">
+                <label class="form-label" for="{{ form.name.id_for_label }}">Full Name</label>
+                <input type="text" name="{{ form.name.name }}" id="{{ form.name.id_for_label }}" class="form-control" placeholder="Enter Full Name" required>
+            </div>
+
+            <!-- Address Field -->
+            <div class="mb-3">
+                <label class="form-label" for="{{ form.address.id_for_label }}">Delivery Address</label>
+                <textarea name="{{ form.address.name }}" id="{{ form.address.id_for_label }}" class="form-control" rows="5" placeholder="Enter Delivery Address" required></textarea>
+            </div>
+
+            <!-- Card Number Field -->
+            <div class="mb-3">
+                <label class="form-label" for="{{ form.card_number.id_for_label }}">Card Number</label>
+                <input type="text" name="{{ form.card_number.name }}" id="{{ form.card_number.id_for_label }}" class="form-control" placeholder="Enter Card Number" required>
+            </div>
+
+            <!-- Expiry Date Fields -->
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" for="{{ form.card_expiry_month.id_for_label }}">Expiry Month</label>
+                    <input type="text" name="{{ form.card_expiry_month.name }}" id="{{ form.card_expiry_month.id_for_label }}" class="form-control" placeholder="MM" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" for="{{ form.card_expiry_year.id_for_label }}">Expiry Year</label>
+                    <input type="text" name="{{ form.card_expiry_year.name }}" id="{{ form.card_expiry_year.id_for_label }}" class="form-control" placeholder="YYYY" required>
+                </div>
+            </div>
+
+            <!-- CVV Field -->
+            <div class="mb-3">
+                <label class="form-label" for="{{ form.card_cvv.id_for_label }}">CVV</label>
+                <input type="text" name="{{ form.card_cvv.name }}" id="{{ form.card_cvv.id_for_label }}" class="form-control" placeholder="Enter CVV" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-success w-100">💳 Complete Order</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
