@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome to the Bookstore</h1>
+
+<h2>Your Previous Orders:</h2>
+<ul>
+    {% for order in orders %}
+        <li>{{ order.book.title }} - {{ order.order_date }} - {{ order.address }}</li>
+    {% empty %}
+        <li>No previous orders found.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'book_list'%}">Order this book</a>
+{% endblock %}

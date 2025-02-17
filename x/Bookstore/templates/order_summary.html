@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>Order Summary</h2>
+<p>Name: {{ order.name }}</p>
+<p>Address: {{ order.address }}</p>
+<p>Payment Info: **** **** **** {{ order.payment_info|slice:"-4:" }}</p>
+<p>Book: {{ order.book.title }}</p>
+<p>Date: {{ order.order_date }}</p>
+{% endblock %}
